@@ -1,0 +1,6 @@
+{
+    "env":{
+        "Mongo_ATLAS_PW" :"TodoApp",
+        "Mongo_ATLAS_dbName":"Todo_App"
+    }
+}
