@@ -24,7 +24,7 @@ route.post('/',(req,res,next)=>{
         console.log(doc)
         res.status(201).json({
             message:"post work",
-            ListItem:doc
+            Posted:true
         })
     }).catch(err=>{
         console.log(err)
@@ -40,7 +40,7 @@ route.patch('/:ListId',(req,res,next)=>{
     const updatedList={[req.body.ItemParam]:req.body.NewItem}
     TodoItem.update({_id:id},{$set:updatedList}).exec().then(result=>{
         console.log(result)
-        res.status(200).json(result)
+        res.status(200).json({updated:true})
     }).catch(err=>{
         console.log(err)
         res.status(500).json({
@@ -53,7 +53,9 @@ route.delete('/:ListId',(req,res,next)=>{
     const id=req.params.ListId
     TodoItem.remove({_id:id}).exec().then(result=>{
         console.log(result)
-        res.status(200).json(result)
+        res.status(200).json({
+            deleted:true
+        })
     }).catch(err=>{
         console.log(err)
         res.status(500).json({
