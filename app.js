@@ -23,7 +23,7 @@ app.use(BodyParser.json())
 // 	next()
 // })
 
-app.use('/',TodoList)
+app.use('/TodoList',TodoList)
 // app.use((req, res, next) => {
 //     const error = new Error('not found');
 // 	error.status = 404;

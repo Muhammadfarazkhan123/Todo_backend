@@ -3,7 +3,7 @@ const route=express.Router();
 const mongoose=require('mongoose');
 const TodoItem=require('../Models/TodoList')
 
-route.get('/get',(req,res,next)=>{
+route.get('/',(req,res,next)=>{
     TodoItem.find().exec().then(result=>{
         console.log(result)
         res.status(200).json(result)
@@ -15,7 +15,7 @@ route.get('/get',(req,res,next)=>{
     })
 })
 
-route.post('/post',(req,res,next)=>{
+route.post('/',(req,res,next)=>{
     const todoItem=new TodoItem({
         _id:new mongoose.Types.ObjectId,
         item:req.body.item
