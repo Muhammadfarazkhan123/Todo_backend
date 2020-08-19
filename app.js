@@ -23,7 +23,7 @@ app.use((req, res, next) => {
 	next()
 })
 
-app.use('/TodoList',TodoList)
+app.use('/',TodoList)
 app.use((req, res, next) => {
     const error = new Error('not found');
 	error.status = 404;
